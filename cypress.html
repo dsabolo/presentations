@@ -18,7 +18,7 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section>
+            <section id="start">
                 <h1>Testing para dormir tranquilos</h1>
                 <p>Tips y herramientas para testing integral de aplicaciones web.</p>
                 <aside class="notes">
@@ -29,7 +29,7 @@
                     - compartir la experiencia.<br>
                 </aside>
             </section>
-            <section>Contexto</h2>
+            <section id="Context">Contexto</h2>
                 <section>
                     <h3>Proyecto</h3>
                     <ul>
@@ -79,11 +79,11 @@
 
 
             </section>
-            <section>
+            <section id="Cypress">
                 <section>
                     <img src="assets/cypress.png" alt="Cypress">
                 </section>
-                <section>
+                <section id="cypress_intro">
                     <h3>¿Qué es Cypress?</h3>
                     <ul class="fragment fade-in-then-out">
                         <li>https://www.cypress.io/</li>
@@ -97,7 +97,7 @@
                         Alto costo , pero alta cobertura.
                     </aside>
                 </section>
-                <section>
+                <section id="cypress_benefit" >
                     <h3>Ventajas</h3>
                     <ul class="fragment fade-in-then-out">
                         <li>👍️ Usa tecnologías que ya manejamos.</li>
@@ -113,7 +113,7 @@
                         - WebDriver interactuando con browser vs browser real
                     </aside>
                 </section>
-                <section>
+                <section id="cypress_perks">
 
                     <h3>Limitaciones</h3>
                     <ul class="fragment fade-in-then-out">
@@ -130,7 +130,7 @@
 
                     </aside>
                 </section>
-                <section>
+                <section id="cypress_install">
                     <h3>Instalación.</h3>
                     <pre>
                         Instalar
@@ -150,14 +150,14 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="cypress_execution_test_runner">
                     <h3>Modos de ejecución</h3>
                     <h4>Test Runner (headed)</h4>
                     <pre>$ cypress open  / $ cypress run --headed</pre>
                     <img src="assets/testrunner.png" alt="testrunner">
                 </section>
 
-                <section>
+                <section id="cypress_execution_console">
                     <h3>Modos de ejecución</h3>
                     <h4>Headless mode</h4>
                     <pre>$ cypress run</pre>
@@ -165,7 +165,7 @@
                 </section>
 
 
-                <section>
+                <section id="cypress_integrate">
                     <h3>Integrar</h3>
                     <pre>
                             Integrar (package.json)
@@ -186,7 +186,7 @@
                 </section>
 
 
-                <section>
+                <section id="cypress_estructure">
                     <h3>Estructura</h3>
                     <pre>
                         <code class="language-bash" data-trim data-line-numbers="1-8|4|1,3,5-8">
@@ -211,7 +211,7 @@
                     </aside>
                 </section>
 
-                <section data-auto-animate>
+                <section id="cypress_test_estructure" data-auto-animate>
                     <h3>Estructura de un test</h3>
                     <pre data-id="code-animation">
                             cypress/integration/test-name.js
@@ -255,7 +255,7 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="cypress_fixtures">
                     <h3>Fixtures</h3>
                     <pre>
                         cypress/fixtures/todos.json
@@ -284,7 +284,7 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="cypress_example">
                     <h3>Test de ejemplo</h3>
                     <pre>
                             <code class="js" data-trim>
@@ -311,7 +311,7 @@
                         </pre>
                 </section>
 
-                <section>
+                <section id="cypress_configurations">
                     <h3>Custom Configurations</h3>
                     <pre>
                             cypress.json
@@ -350,12 +350,12 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="cypress_configuration_2">
                     <h3>Inspeccionar configuraciones</h3>
                     <img src="assets/configOverview.png" alt="ConfigOverview">
                 </section>
 
-                <section>
+                <section id="cypress_pluggins">
                     <h3>Pluggins</h3>
 
                     <pre>
@@ -388,7 +388,7 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="cypress_commands">
                     <h3>Commands</h3>
                     <pre> cypress/support/commands.js
                             <code class="hljs" data-trim="" data-line-numbers="1-10|12-28|29-35">
@@ -434,70 +434,79 @@
                     </aside>
 
                 </section>
-                <section>
-                    <h3>Commands</h3>
-                    <pre>
-                            integration/some_spec_file.js
-                            <code class="fragment language-javascript" data-trim data-line-numbers="1-24|7-10">
-                                describe('Test basic page widgets', function () {
-                                    const viewports = ['macbook-15', 'iphone-6+'];
-                                    const pageTitle = 'CYPRESS TEST CONTENT: This is a test page for the BASIC PAGES  created by CYPRESS';
-                                    const pageBody = 'This is the body';
-
-                                    it('Make sure basic pages uses half-hero2 and text widgets', function () {
-                                        cy.drupalLogin(
-                                            Cypress.env('drupalAdminName'), 
-                                            Cypress.env('drupalAdminPassword')
-                                        );
-                                
-                                        cy.visit('/node/add/page');
-                                        cy.get('#edit-title-0-value').type(pageTitle, {force: true});
-                                        cy.ckeditorType('.cke', `<p>${pageBody}</p>`);
-                                        cy.get('#edit-submit').click();
-                                    
-                                        viewports.forEach(function (viewport) {
-                                            cy.viewport(viewport);
-                                            cy.get('.half-hero-no-cutout').should('exist');
-                                            cy.get('h1.hero__title').should('exist').contains(pageTitle);
-                                            cy.get('.text-block').should('exist').contains(pageBody);
-                                        });
-                                    });
-                                    });  
-                            </code>
-                        </pre>
-
-                    <pre>
-                            <code class="fragment language-javascript" data-trim>
-                                cy.get('.ui-dialog-content > iframe').iframe().then(($iframe) => {
-                                    // Go to the upload tab.
-                                    cy.wrap($iframe).contains('Upload').click({ force: true });
-                                });
-                            </code>
-                        </pre>
-
+            
+                <section id="cypress_demo_app">
+                    <h3>Demo</h3>
+                    <iframe src="https://dsabolo.github.io/minitodo/index.html" frameborder="0" style="width: 320px; height: 600px;"></iframe>
                 </section>
 
+                <section id="cypress_demo_code">
+                    <pre>
+                        <code class="js" data-trim data-line-numbers="1-41|3-6|5|8-22|19|23-31|27|33-40|36,38">
+                            describe('Test App de TODO List', ()=> {
+
+                                it('Podemos acceder a la app' , () => {
+                                    cy.visit('/');
+                                    cy.get('#todoApp').should('exist');    
+                                });
+                            
+                                it('Podemos crear tareas' , () => {
+                                    cy.visit('/');
+                                    const initialQty = Cypress.$('.list-group-item').length;
+                                    let itemsAdded = 0;
+                                    cy.fixture('todos').then(todos => {
+                                        todos.forEach(todoItem => {
+                                            cy.get('#todoApp input[type="text"]').type(todoItem);
+                                            cy.get('#todoApp button').click({'force': true})
+                                            cy.get('#todoApp .list-group').contains(todoItem);
+                                            itemsAdded++;
+                                        });
+                                        cy.get('#todoApp .list-group').find('.list-group-item').should('have.length', initialQty + itemsAdded);
+                                    });
+                                });
+                            
+                                it('Podemos marcar tareas como terminadas' , () => {
+                                    cy.fixture('todos').then(todos => {
+                                        todos.forEach(todoItem => {
+                                            cy.get('#todoApp .list-group-item label span').contains(todoItem).click({'force': true});
+                                            cy.get('#todoApp .list-group-item label span').contains(todoItem).should('have.class', 'completed');
+                                        });   
+                                    });
+                                });
+                            
+                                it('Podemos ocultar las tareas terminadas' , () => {
+                                    const itemsQty = Cypress.$('#todoApp .list-group-item').length;
+                                    const completedItems = Cypress.$('#todoApp span.completed').length;
+                                    cy.get('#todoApp h1 label input').click({ 'force': true });
+                                    cy.get('#todoApp .list-group-item').should('have.length', itemsQty - completedItems);
+                                    cy.get('#todoApp h1 label input').click({ 'force': true });
+                                    cy.get('#todoApp .list-group-item').should('have.length', itemsQty);
+                                });
+                            })   
+                        </code>
+                    </pre>
+                </section>
                 <section>
-                    <h3>Demo</h3>
+                    <h3>Cypress  Run</h3>
+                    <video style="width:70vw" controls>
+                        <source src="assets/cypress_run.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                      </video>
+                </section>
+                <section>
+                    <h3>Cypress  Open</h3>
+                    <video style="width:70vw" controls>
+                        <source src="assets/cypress_open.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                      </video>
                 </section>
 
                 <section>
                     <h3>Conclusión</h3>
                 </section>
 
-
             </section>
 
-            <section>
-                <h2>VRT</h2>
-            </section>
-
-            <section>
-                <h2>Functional Testing</h2>
-            </section>
-            <section>
-                <h2>Conclusiones</h2>
-            </section>
 
         </div>
     </div>
@@ -526,6 +535,9 @@
       code {
           font-size: 16px;
           line-height: 19px;
+      }
+      .reveal pre {
+          width: 100% !important;
       }
     </style>
 </body>
