@@ -297,10 +297,10 @@
                                     it('Podemos completar TODO items' , () => {
                                         cy.fixture('todos').then(todos => {
                                         todos.forEach(todoItem => {
-                                            cy.get('.list-group-item label span')
+                                            cy.get('#todoApp .list-group-item label span')
                                                 .contains(todoItem)
                                                 .click({'force': true});
-                                            cy.get('.list-group-item label span')
+                                            cy.get('#todoApp .list-group-item label span')
                                                 .contains(todoItem)
                                                 .should('have.class', 'completed');
                                             });   
@@ -519,6 +519,15 @@
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });
     </script>
+    <style>
+      h1 {
+          font-size: 100px !important;
+      }  
+      code {
+          font-size: 16px;
+          line-height: 19px;
+      }
+    </style>
 </body>
 
 </html>
