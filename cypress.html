@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -47,8 +48,10 @@
                     </ul>
                     <aside class="notes">
                         - Con la plataforma se logro que cada nuevo sitio salga más velozmente que el anterior.<br>
-                        - Pero rapidamente nos dimos cuentas que la misma plataforma introducirría complejidades: Regresions<br>
-                        - Errores son naturales a la condición humana, pero podemos mejorar los procesos para prevenirlos o disminuir la cantidad.
+                        - Pero rapidamente nos dimos cuentas que la misma plataforma introducirría complejidades:
+                        Regresions<br>
+                        - Errores son naturales a la condición humana, pero podemos mejorar los procesos para
+                        prevenirlos o disminuir la cantidad.
                     </aside>
                 </section>
                 <section>
@@ -70,11 +73,11 @@
                         - ⏬ Ticket boucing / reopening.<br>
                         - Entregas más tempranas<br>
                         - Menos miedo / Mayor seguridad<br>
-                        - Extrategia exitosa. 
+                        - Extrategia exitosa.
                     </aside>
                 </section>
 
-                
+
             </section>
             <section>
                 <section>
@@ -88,10 +91,10 @@
                         <li>Ideado para aplicaciones web</li>
                     </ul>
                     <aside class="notes">
-                       E2E T<br>
-                       Prueba todo el flujo del software desde el punto de vista del usuario final. <br>
-                       Prueba el software desde la interfáz de usuario y no desde el código interno. <br>
-                       Alto costo , pero alta cobertura.
+                        E2E T<br>
+                        Prueba todo el flujo del software desde el punto de vista del usuario final. <br>
+                        Prueba el software desde la interfáz de usuario y no desde el código interno. <br>
+                        Alto costo , pero alta cobertura.
                     </aside>
                 </section>
                 <section>
@@ -104,7 +107,7 @@
 
                     <aside class="notes">
                         - JS <br>
-                        - Todo en uno: en selenium hay que elegir el  <br>
+                        - Todo en uno: en selenium hay que elegir el <br>
                         &nbsp; - framework (Mocha, Jasmine)<br>
                         &nbsp; - Assertion library (Chai, Expect.js)<br>
                         - WebDriver interactuando con browser vs browser real
@@ -120,7 +123,7 @@
                     </ul>
 
                     <aside class="notes">
-                        - Cors : Same superdomain per test -- - iframes<br> 
+                        - Cors : Same superdomain per test -- - iframes<br>
                         - Insecure content.
                         - same port per test<br>
                         - solution: chromeWebSecurity": false
@@ -143,14 +146,14 @@
                         </code>
                     </pre>
                     <aside class="notes">
-                        
+
                     </aside>
                 </section>
 
                 <section>
                     <h3>Modos de ejecución</h3>
                     <h4>Test Runner (headed)</h4>
-                    <pre>$ cypress open  / $ cypress run --headed</pre> 
+                    <pre>$ cypress open  / $ cypress run --headed</pre>
                     <img src="assets/testrunner.png" alt="testrunner">
                 </section>
 
@@ -186,17 +189,26 @@
                 <section>
                     <h3>Estructura</h3>
                     <pre>
-                             <code class="language-bash" data-trim data-line-numbers="1-8|4|1,3,5-8">
-                                cypress.json 
-                                cypress
-                                ├── fixtures
-                                ├── integration
-                                ├── plugins
-                                └── support
-                                    ├── commands.js
-                                    └── index.js
-                             </code>
-                         </pre>
+                        <code class="language-bash" data-trim data-line-numbers="1-8|4|1,3,5-8">
+                            cypress.json 
+                            cypress
+                            ├── fixtures
+                            ├── integration
+                            ├── plugins
+                            └── support
+                                ├── commands.js
+                                └── index.js
+                        </code>
+                    </pre>
+
+                    <aside class="notes">
+                        Estructura carpetas original de cypress <br>
+                        ⏬
+                        Integration, uso frecuente <br>
+                        ⏬
+                        Otros, uso eventual <br>
+
+                    </aside>
                 </section>
 
                 <section data-auto-animate>
@@ -238,9 +250,9 @@
                                 })
                             </code>
                         </pre>
-                        <aside class="notes">
-                            
-                        </aside>
+                    <aside class="notes">
+
+                    </aside>
                 </section>
 
                 <section>
@@ -268,7 +280,7 @@
                         </code>
                     </pre>
                     <aside class="notes">
-                      Carga set de datos (mock) o archivos (imágenes, audio, etc)  
+                        Carga set de datos (mock) o archivos (imágenes, audio, etc)
                     </aside>
                 </section>
 
@@ -333,9 +345,9 @@
                                 Cypress.env('loginTime', (new Date()).toString());
                             </code>
                         </pre>
-                        <aside class="notes">
-                            - Nos sirven para probar nuestros test en diferentes contextos.
-                        </aside>
+                    <aside class="notes">
+                        - Nos sirven para probar nuestros test en diferentes contextos.
+                    </aside>
                 </section>
 
                 <section>
@@ -417,9 +429,9 @@
                                 });
                             </code>
                         </pre>
-                        <aside class="notes">
-                            Los comandos nos ayudan a no repetir el código.
-                        </aside>
+                    <aside class="notes">
+                        Los comandos nos ayudan a no repetir el código.
+                    </aside>
 
                 </section>
                 <section>
@@ -454,7 +466,7 @@
                             </code>
                         </pre>
 
-                        <pre>
+                    <pre>
                             <code class="fragment language-javascript" data-trim>
                                 cy.get('.ui-dialog-content > iframe').iframe().then(($iframe) => {
                                     // Go to the upload tab.
