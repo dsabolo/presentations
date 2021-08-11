@@ -1,94 +1,97 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Testing para dormir tranquilos</title>
+    <title>Testing para dormir tranquilos</title>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.min.css">
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/monokai.min.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-                    <h1>Testing para dormir tranquilos</h1>
-                    <p>Tips y herramientas para testing integral de aplicaciones web.</p>
-                </section>
-				<section>Contexto</h2>
-                    <section>
-                        <h3>Proyecto</h3>
-                        <ul>
-                            <li>Desarrollo de una plataforma para gestionar multiples sitios</li>
-                            <li>Código compartido.</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Problemas</h3>
-                        <ul>
-                            <li>Rebote de tickets.</li>
-                            <li>Se resolvía un tema pero aparecía una regresión.</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Soluciones</h3>
-                        <ul>
-                            <li>Mejora en la estrategía de testing.</li>
-                            <li>Sumar  al equipo un QA interno dedicado.</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h5>El último sitio se termino semanas antes de la fecha pautada, no tuvimos que re abrir tickets desde varios sprints antes de la entrega.</h5>
-                    </section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.min.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/monokai.min.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Testing para dormir tranquilos</h1>
+                <p>Tips y herramientas para testing integral de aplicaciones web.</p>
+            </section>
+            <section>Contexto</h2>
+                <section>
+                    <h3>Proyecto</h3>
+                    <ul>
+                        <li>Desarrollo de una plataforma para gestionar multiples sitios</li>
+                        <li>Código compartido.</li>
+                    </ul>
                 </section>
                 <section>
-                    <section>
-                        <img src="assets/cypress.png" alt="Cypress">
-                    </section>
-                    <section>
-                        <h3>¿Qué es Cypress?</h3>
-                        <ul class="fragment fade-in-then-out">
-                            <li>https://www.cypress.io/</li>
-                            <li>Framework de testing end to end.</li>
-                            <li>Ideado para aplicaciones web</li>
-                        </ul>
-                        <aside class="notes">
-                            Shhh, these are your private notes 📝
-                        </aside>
-                    </section>
-                    <section>
-                        <h3>Ventajas</h3>
-                        <ul class="fragment fade-in-then-out">
-                            <li>👍️ Usa tecnologías que ya manejamos.</li>
-                            <li>👍️ Todo en uno.</li>
-                            <li>👍️ Rápido </li>
-                            <li>👍️ Javascript / Browser based driver</li> 
-                        </ul>
-                        
-                        <aside class="notes">
-                            Shhh, these are your private notes 📝
-                        </aside>
-                    </section>
-                    <section>
-                        
-                        <h3>Limitaciones</h3>
-                        <ul class="fragment fade-in-then-out">
-                            <li>👎️ CORS limitation.</li>
-                            <li>👎️ No es full crosbrowsing.</li>
-                            <li>👎️ Single tab </li>
-                        </ul>
-                      
-                        <aside class="notes">
-                            Shhh, these are your private notes 📝
-                        </aside>
-                    </section>
-                    <section>
-                        <h3>Instalación.</h3>
-					<pre>
+                    <h3>Problemas</h3>
+                    <ul>
+                        <li>Rebote de tickets.</li>
+                        <li>Se resolvía un tema pero aparecía una regresión.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Soluciones</h3>
+                    <ul>
+                        <li>Mejora en la estrategía de testing.</li>
+                        <li>Sumar al equipo un QA interno dedicado.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h5>El último sitio se termino semanas antes de la fecha pautada, no tuvimos que re abrir tickets
+                        desde varios sprints antes de la entrega.</h5>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <img src="assets/cypress.png" alt="Cypress">
+                </section>
+                <section>
+                    <h3>¿Qué es Cypress?</h3>
+                    <ul class="fragment fade-in-then-out">
+                        <li>https://www.cypress.io/</li>
+                        <li>Framework de testing end to end.</li>
+                        <li>Ideado para aplicaciones web</li>
+                    </ul>
+                    <aside class="notes">
+                        Shhh, these are your private notes 📝
+                    </aside>
+                </section>
+                <section>
+                    <h3>Ventajas</h3>
+                    <ul class="fragment fade-in-then-out">
+                        <li>👍️ Usa tecnologías que ya manejamos.</li>
+                        <li>👍️ Todo en uno.</li>
+                        <li>👍️ Rápido </li>
+                        <li>👍️ Javascript / Browser based driver</li>
+                    </ul>
+
+                    <aside class="notes">
+                        Shhh, these are your private notes 📝
+                    </aside>
+                </section>
+                <section>
+
+                    <h3>Limitaciones</h3>
+                    <ul class="fragment fade-in-then-out">
+                        <li>👎️ CORS limitation.</li>
+                        <li>👎️ No es full crosbrowsing.</li>
+                        <li>👎️ Single tab </li>
+                    </ul>
+
+                    <aside class="notes">
+                        Shhh, these are your private notes 📝
+                    </aside>
+                </section>
+                <section>
+                    <h3>Instalación.</h3>
+                    <pre>
                         Instalar
                         <code class="language-bash" data-trim>
                             $ npm install cypress --save-dev
@@ -100,22 +103,22 @@
                             cypress verify
                             cypress install --force
                         </code>
-                    </pre>    
-                    </section>
+                    </pre>
+                </section>
 
-                    <section>
-                        <h3>Test Runner (headed)</h3>
-                        <img src="assets/testrunner.png" alt="testrunner">
-                    </section>
-                    
-                    <section>
-                        <h3>Headless mode</h3>
-                        <img src="assets/cypressrun.png" alt="cypress run">
-                    </section>
+                <section>
+                    <h3>Test Runner (headed)</h3>
+                    <img src="assets/testrunner.png" alt="testrunner">
+                </section>
 
-                    <section>
-                        <h3>Integrar</h3>
-                        <pre>
+                <section>
+                    <h3>Headless mode</h3>
+                    <img src="assets/cypressrun.png" alt="cypress run">
+                </section>
+
+                <section>
+                    <h3>Integrar</h3>
+                    <pre>
                             Integrar (package.json)
                             <code class="language-json" data-trim>
                                 "scripts": {
@@ -131,12 +134,12 @@
                                 $ npm run cypress:open
                             </code>
                         </pre>
-                    </section>
+                </section>
 
-                    
-                    <section>
-                        <h3>Estructura</h3>
-                         <pre>
+
+                <section>
+                    <h3>Estructura</h3>
+                    <pre>
                              <code class="language-bash" data-trim data-line-numbers="1-8|4|1,3,5-8">
                                 cypress.json 
                                 cypress
@@ -147,12 +150,12 @@
                                     ├── commands.js
                                     └── index.js
                              </code>
-                         </pre>   
-                    </section>
+                         </pre>
+                </section>
 
-                    <section data-auto-animate>
-                        <h3>Estructura de un test</h3>
-                        <pre data-id="code-animation">
+                <section data-auto-animate>
+                    <h3>Estructura de un test</h3>
+                    <pre data-id="code-animation">
                             cypress/integration/test-name.js
                             <code class="js"  data-trim data-line-numbers="|1|2-15|2-5|6-8|9-11|12-14|18-32">
                                 describe('Test App de TODO List', ()=> {
@@ -189,11 +192,11 @@
                                 })
                             </code>
                         </pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h3>Test de ejemplo</h3>
-                        <pre>
+                <section>
+                    <h3>Test de ejemplo</h3>
+                    <pre>
                             <code class="js" data-trim>
                                 describe('Test App de TODO List', ()=> {
 
@@ -216,11 +219,11 @@
                                 })
                             </code>
                         </pre>
-                    </section>
-                    
-                    <section>
-                        <h3>Custom Configurations</h3>
-                        <pre>
+                </section>
+
+                <section>
+                    <h3>Custom Configurations</h3>
+                    <pre>
                             cypress.json
                             <code class="language-json" data-trim>
                                 {
@@ -233,14 +236,14 @@
                                 }
                             </code>
                         </pre>
-                        <pre>
+                    <pre>
                             On the fly set
                             <code class="language-bash" data-trim>
                                 $ cypress run --headed --config viewportWidth=320
                             </code>
                         </pre>
 
-                        <pre>
+                    <pre>
                             Environment variables
                             <code class="language-bash" data-trim>
                                 $ CYPRESS_baseUrl='http://test.site/' cypress open
@@ -253,17 +256,17 @@
                             </code>
                         </pre>
 
-                    </section>
+                </section>
 
-                    <section>
-                        <h3>Inspeccionar configuraciones</h3>
-                        <img src="assets/configOverview.png" alt="ConfigOverview">
-                    </section>
+                <section>
+                    <h3>Inspeccionar configuraciones</h3>
+                    <img src="assets/configOverview.png" alt="ConfigOverview">
+                </section>
 
-                    <section>
-                        <h3>Pluggins</h3>
+                <section>
+                    <h3>Pluggins</h3>
 
-                        <pre>
+                    <pre>
                             Install
                             <code class="bash" data-trim>
                                 npm install pluginname --save-dev
@@ -284,14 +287,15 @@
                                 ...
                             </code>
                         </pre>
-                        <p>
-                            Pluggins directory: <a href="https://docs.cypress.io/plugins/directory">https://docs.cypress.io/plugins/directory</a>
-                        </p>
-                    </section>
+                    <p>
+                        Pluggins directory: <a
+                            href="https://docs.cypress.io/plugins/directory">https://docs.cypress.io/plugins/directory</a>
+                    </p>
+                </section>
 
-                    <section>
-                        <h3>Commands</h3>
-                        <pre> cypress/support/commands.js
+                <section>
+                    <h3>Commands</h3>
+                    <pre> cypress/support/commands.js
                             <code class="hljs" data-trim="" data-line-numbers="1-10|12-28|29-35">
 
                                 /**
@@ -332,10 +336,10 @@
                             </code>
                         </pre>
 
-                    </section>
-                    <section>
-                        <h3>Commands</h3>
-                        <pre> 
+                </section>
+                <section>
+                    <h3>Commands</h3>
+                    <pre>
                             integration/some_spec_file.js
                             <code class="fragment language-javascript" data-trim data-line-numbers="1-24|7-10">
                                 describe('Test basic page widgets', function () {
@@ -364,8 +368,8 @@
                                     });  
                             </code>
                         </pre>
-                     
-                        <pre>
+
+                    <pre>
                             <code class="fragment language-javascript" data-trim>
                                 cy.get('.ui-dialog-content > iframe').iframe().then(($iframe) => {
                                     // Go to the upload tab.
@@ -374,49 +378,50 @@
                             </code>
                         </pre>
 
-                    </section>
-                
-                    <section>
-                        <h3>Demo</h3>
-                    </section>
-
-                    <section>
-                        <h3>Conclusión</h3>
-                    </section>
-                  
-
                 </section>
-                
+
                 <section>
-                    <h2>VRT</h2>
+                    <h3>Demo</h3>
                 </section>
-                
+
                 <section>
-                    <h2>Functional Testing</h2>
-                </section>
-                <section>
-                    <h2>Conclusiones</h2>
+                    <h3>Conclusión</h3>
                 </section>
 
-			</div>
-		</div>
 
-		
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.min.js"></script>
+            </section>
 
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+            <section>
+                <h2>VRT</h2>
+            </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+            <section>
+                <h2>Functional Testing</h2>
+            </section>
+            <section>
+                <h2>Conclusiones</h2>
+            </section>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.min.js"></script>
+
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
 </html>
