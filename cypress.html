@@ -103,6 +103,7 @@
                         <li>👍️ Usa tecnologías que ya manejamos.</li>
                         <li>👍️ Solución todo en uno.</li>
                         <li>👍️ Rápido. </li>
+                        <li>👍️ Gratuito. </li>
                     </ul>
 
                     <aside class="notes">
@@ -111,6 +112,7 @@
                         &nbsp; - framework (Mocha, Jasmine)<br>
                         &nbsp; - Assertion library (Chai, Expect.js)<br>
                         - WebDriver interactuando con browser vs browser real
+                        <br> Comentar servicio Dashboard.
                     </aside>
                 </section>
                 <section id="cypress_perks">
@@ -120,6 +122,7 @@
                         <li>👎️ No Cross-origin resource sharing. (CORS)</li>
                         <li>👎️ Single tab </li>
                         <li>👎️ No es full crosbrowsing.</li>
+                        <li>👎️ No mouseover 🖱.</li>
                     </ul>
 
                     <aside class="notes">
@@ -155,6 +158,11 @@
                     <h4>Test Runner (headed)</h4>
                     <pre>$ cypress open  / $ cypress run --headed</pre>
                     <img src="assets/testrunner.png" alt="testrunner">
+                    <aside class="notes">
+                        - Visualizacion en tiempo real.<br> 
+                        - Time Travel: Snapshots<br>
+                        - Log de comandos / Debbuger.
+                    </aside>
                 </section>
 
                 <section id="cypress_execution_console">
@@ -175,7 +183,7 @@
                                     "cypress:run" : "cypress run",
                                     "cypress:run:mobile" : "cypress run --headed --config viewportWidth=320",
                                     "cypress:run:firefox" : "cypress run --headed --browser firefox"
-                                  },
+                                },
                             </code>
                             <br><br>
                             Ejecutar
@@ -251,8 +259,35 @@
                             </code>
                         </pre>
                     <aside class="notes">
-
+                        
                     </aside>
+                </section>
+
+                <section>
+                    <h3>Comands & Asserts</h3>
+                    <pre>
+                        <code class="js"  data-trim data-line-numbers="|2,3,5,6,7,9|4,10">
+                            it('creates 2 items', () => {
+                                cy.visit('/') // command
+                                cy.focused() // command
+                                  .should('have.class', 'new-todo') // assertion
+                                cy.get('.new-todo') // command
+                                  .type('todo A{enter}') // command
+                                  .type('todo B{enter}') // command
+    
+                                cy.get('.todo-list li') // command
+                                  .should('have.length', 2) // assertion
+                            })
+                        </code>
+                    </pre>
+                    <p><a  href="https://docs.cypress.io/guides/references/assertions">https://docs.cypress.io/guides/references/assertions</a></p>
+                <aside class="notes">
+                    Existen 2 tipos de métodos: commands y asserts.
+                    - Comandos son para interactuar con el DOM<br>
+                    - Una forma alternativa de interactuar con el DOM es cypress studio.<br>
+                    - Asserts son las evaluaciones.
+
+                </aside>
                 </section>
 
                 <section id="cypress_fixtures">
@@ -322,7 +357,7 @@
                                     "env": {
                                         "username": "diego",
                                         "pass": "943mqzp"
-                                      }
+                                    }
                                 }
                             </code>
                         </pre>
@@ -491,19 +526,28 @@
                     <video style="width:70vw" controls>
                         <source src="assets/cypress_run.mp4" type="video/mp4">
                         Your browser does not support HTML video.
-                      </video>
+                    </video>
                 </section>
                 <section>
                     <h3>Cypress  Open</h3>
                     <video style="width:70vw" controls>
                         <source src="assets/cypress_open.mp4" type="video/mp4">
                         Your browser does not support HTML video.
-                      </video>
+                    </video>
                 </section>
-
+                <section>
+                    <img src="assets/error.jpg" alt="Error">
+                </section>
+                
                 <section>
                     <h3>Conclusión</h3>
+                    <aside class="notes">
+                        - Herramienta poderosa. <br/>
+                        - Vale la pena el esfuerzo de aprenderla.<br/>
+
+                    </aside>
                 </section>
+
 
             </section>
 
