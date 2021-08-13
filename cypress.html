@@ -76,9 +76,12 @@
                         - Extrategia exitosa.
                     </aside>
                 </section>
-
-
             </section>
+
+            <section id="functional_testing">
+                <h3>Functional Testing</h3>
+            </section>
+
             <section id="Cypress">
                 <section>
                     <img src="assets/cypress.png" alt="Cypress">
@@ -92,8 +95,8 @@
                     </ul>
                     <aside class="notes">
                         E2E T<br>
-                        Prueba todo el flujo del software desde el punto de vista del usuario final. <br>
-                        Prueba el software desde la interfáz de usuario y no desde el código interno. <br>
+                        Se lo prueba como si fuera un usuario real. <br>
+                        Test desde UI y no desde el code. <br>
                         Alto costo , pero alta cobertura.
                     </aside>
                 </section>
@@ -149,7 +152,7 @@
                         </code>
                     </pre>
                     <aside class="notes">
-
+                        Docker
                     </aside>
                 </section>
 
@@ -259,12 +262,13 @@
                             </code>
                         </pre>
                     <aside class="notes">
-                        
+                        Hooks -> evitamos repetir code <br>
+                        Tests 
                     </aside>
                 </section>
 
                 <section>
-                    <h3>Comands & Asserts</h3>
+                    <h3>Estructura de un test</h3>
                     <pre>
                         <code class="js"  data-trim data-line-numbers="|2,3,5,6,7,9|4,10">
                             it('creates 2 items', () => {
@@ -280,12 +284,19 @@
                             })
                         </code>
                     </pre>
-                    <p><a  href="https://docs.cypress.io/guides/references/assertions">https://docs.cypress.io/guides/references/assertions</a></p>
+                    <p style='font-size:15px'>
+                        <a href="https://mochajs.org/">https://mochajs.org/</a>
+                        <br>
+                        <a  href="https://docs.cypress.io/guides/references/assertions">https://docs.cypress.io/guides/references/assertions</a><br>
+                        TDD: <a href="https://www.chaijs.com/api/assert/">https://www.chaijs.com/api/assert/</a> <br>
+                        BDD: <a href="https://www.chaijs.com/api/bdd/">https://www.chaijs.com/api/bdd/</a>
+                    </p>
+
                 <aside class="notes">
                     Existen 2 tipos de métodos: commands y asserts.
                     - Comandos son para interactuar con el DOM<br>
                     - Una forma alternativa de interactuar con el DOM es cypress studio.<br>
-                    - Asserts son las evaluaciones.
+                    - Asserts son las evaluaciones. TDD (Test Driven Development) BDD(Behavior Driven Development)
 
                 </aside>
                 </section>
@@ -344,6 +355,13 @@
                                 })
                             </code>
                         </pre>
+                        <aside class="notes">
+                            Accedemos a la app <br>
+                            recorremos el fixture <br>
+                            buscamos la tarea <br>
+                            click <br>
+                            verificamos
+                        </aside>
                 </section>
 
                 <section id="cypress_configurations">
@@ -457,8 +475,6 @@
                                     });
                                 });
 
-
-
                                 before(() => {
                                     cy.avoidProductionDomains();
                                 });
@@ -477,7 +493,7 @@
 
                 <section id="cypress_demo_code">
                     <pre>
-                        <code class="js" data-trim data-line-numbers="1-41|3-6|5|8-22|19|23-31|27|33-40|36,38">
+                        <code class="js" data-trim data-line-numbers="1-41|3-6|5|8-23|19-21|25-36|31-33|38-47|42,43,45,46">
                             describe('Test App de TODO List', ()=> {
 
                                 it('Podemos acceder a la app' , () => {
@@ -496,15 +512,21 @@
                                             cy.get('#todoApp .list-group').contains(todoItem);
                                             itemsAdded++;
                                         });
-                                        cy.get('#todoApp .list-group').find('.list-group-item').should('have.length', initialQty + itemsAdded);
+                                        cy.get('#todoApp .list-group')
+                                            .find('.list-group-item')
+                                            .should('have.length', initialQty + itemsAdded);
                                     });
                                 });
                             
                                 it('Podemos marcar tareas como terminadas' , () => {
                                     cy.fixture('todos').then(todos => {
                                         todos.forEach(todoItem => {
-                                            cy.get('#todoApp .list-group-item label span').contains(todoItem).click({'force': true});
-                                            cy.get('#todoApp .list-group-item label span').contains(todoItem).should('have.class', 'completed');
+                                            cy.get('#todoApp .list-group-item label span')
+                                                .contains(todoItem)
+                                                .click({'force': true});
+                                            cy.get('#todoApp .list-group-item label span')
+                                                .contains(todoItem)
+                                                .should('have.class', 'completed');
                                         });   
                                     });
                                 });
@@ -513,9 +535,11 @@
                                     const itemsQty = Cypress.$('#todoApp .list-group-item').length;
                                     const completedItems = Cypress.$('#todoApp span.completed').length;
                                     cy.get('#todoApp h1 label input').click({ 'force': true });
-                                    cy.get('#todoApp .list-group-item').should('have.length', itemsQty - completedItems);
+                                    cy.get('#todoApp .list-group-item')
+                                        .should('have.length', itemsQty - completedItems);
                                     cy.get('#todoApp h1 label input').click({ 'force': true });
-                                    cy.get('#todoApp .list-group-item').should('have.length', itemsQty);
+                                    cy.get('#todoApp .list-group-item')
+                                        .should('have.length', itemsQty);
                                 });
                             })   
                         </code>
@@ -544,6 +568,7 @@
                     <aside class="notes">
                         - Herramienta poderosa. <br/>
                         - Vale la pena el esfuerzo de aprenderla.<br/>
+                        - El tiempo invertido en los test se recompenza con seguridad.<br/>
 
                     </aside>
                 </section>
